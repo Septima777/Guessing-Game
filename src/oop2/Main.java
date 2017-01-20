@@ -5,8 +5,7 @@ package oop2;
  * 
  * @author Noppawan Kulchol 
  */
-public class Main {
-	
+public class Main {	
 	
 	/** create objects and start the game */
 	public static void main(String[] arg) {

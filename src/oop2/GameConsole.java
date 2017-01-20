@@ -19,7 +19,6 @@ public class GameConsole {
 	public int play(Game game) {
 		System.out.println("GUESSING GAME!!!");
 		Scanner scan = new Scanner(System.in);
-		game = new Game(20);
 		System.out.println(game.getHint());
 		int number = 0;
 		while (game.guess(number) != true) {

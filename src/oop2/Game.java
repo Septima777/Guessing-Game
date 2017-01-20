@@ -70,15 +70,24 @@ public class Game {
 	public String getHint() {
 		return hint;
 	}
-
+	/**
+	 * 
+	 * @param hint is the word that has to print when guess the correct number or the wrong number.
+	 */
 	protected void setHint(String hint) {
 		this.hint = hint;
 	}
-
+	/**
+	 * 
+	 * @param This method use for call when has to count the round of guessing.
+	 */
 	public int getCount() {
 		return count;
 	}
-
+	/**
+	 * 
+	 * @param To use for print the count.
+	 */
 	public void setCount(int count) {
 		this.count = count;
 	}
