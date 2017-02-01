@@ -1,16 +1,19 @@
 package oop2;
 
 import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Game of guessing a secret number.
  * 
- * @author Noppawan Kulchol 
+ * @author Noppawan Kulchol
  */
 
-public class Game {
+public class GuessingGame {
 	/* properties of a guessing game */
+	private int upperBound;
+	private int secret;
+	private String hint;
+	private int count;
 
 	/**
 	 * Initialize a new game.
@@ -18,16 +21,11 @@ public class Game {
 	 * @param upperbound
 	 *            is the max value for the secret number (>1).
 	 */
-
-	private int upperBound;
-	private int secret;
-	private String hint;
-	private int count;
-
-	Game(int upperBound) {
+	GuessingGame(int upperBound) {
 		this.upperBound = upperBound;
 		this.secret = getRandomNumber(upperBound);
-		this.hint = "I'm thinking of a number between 1 and "+ upperBound;
+		this.hint = "I'm thinking of a number between 1 and " + upperBound;
+		this.count = 0;
 
 	}
 
@@ -44,8 +42,14 @@ public class Game {
 		return random.nextInt(limit) + 1;
 	}
 
+	/**
+	 * 
+	 * @param number
+	 *            that I guessed.
+	 * @return true when it's correct number or false when it's not correct
+	 *         number.
+	 */
 	public boolean guess(int number) {
-		// Scanner scanner = new Scanner(System.in);
 		boolean check = false;
 		if (secret == number) {
 			setHint("Correct. The secret is " + number);
@@ -70,26 +74,24 @@ public class Game {
 	public String getHint() {
 		return hint;
 	}
+
 	/**
-	 * 
-	 * @param hint is the word that has to print when guess the correct number or the wrong number.
+	 * Set the hint of game.
+	 * @param hint
+	 *            is the word that has to print when guess the correct number or
+	 *            the wrong number.
 	 */
 	protected void setHint(String hint) {
 		this.hint = hint;
 	}
+
 	/**
+	 * Return a count of all guessing.
 	 * 
-	 * @param This method use for call when has to count the round of guessing.
+	 * @return count of all guessing
 	 */
 	public int getCount() {
 		return count;
 	}
-	/**
-	 * 
-	 * @param To use for print the count.
-	 */
-	public void setCount(int count) {
-		this.count = count;
-	}
-	
+
 }

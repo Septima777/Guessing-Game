@@ -16,21 +16,20 @@ public class GameConsole {
 	 * @return The number that correct.
 	 */
 
-	public int play(Game game) {
+	public int play(GuessingGame game) {
 		System.out.println("GUESSING GAME!!!");
 		Scanner scan = new Scanner(System.in);
 		System.out.println(game.getHint());
 		int number = 0;
-		while (game.guess(number) != true) {
+		boolean check;
+		do{ 
 			System.out.print("What is your guess?   ");
 			number = scan.nextInt();
-			game.guess(number);
+			check = game.guess(number);
 			System.out.println(game.getHint());
-			game.setCount(game.getCount() + 1);
-			// after while loop print a result message return the solution (the
-			// guessed secret)
-
-		}
+		
+		}while(!check);
+		
 		System.out.println("You used " + game.getCount() + " guesses");
 		return number;
 	}
